@@ -1,17 +1,14 @@
-locals {
-    timestamp = formatdate("YYYYMMDDhhmm", timestamp())
+variable keeper {
+  type    = string
+  default = ""
 }
 
 resource random_pet random_string {
   length    = 3
   separator = " "
   keepers = {
-      timestamp = local.timestamp
+    variable = var.keeper
   }
-}
-
-output timestamp {
-    value = local.timestamp
 }
 
 output random_string {
