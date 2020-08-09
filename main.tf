@@ -2,7 +2,7 @@ resource random_pet random_string {
   length    = 3
   separator = " "
   keepers = {
-      timestamp = timestamp()
+      timestamp = formatdate("YYYYMMDDhhmm", timestamp())
   }
 }
 
