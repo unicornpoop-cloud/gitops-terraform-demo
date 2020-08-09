@@ -11,6 +11,10 @@ resource random_pet random_string {
   }
 }
 
+output keeper {
+    value = var.keeper
+}
+
 output random_string {
   value = random_pet.random_string.id
 }
